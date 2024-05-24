@@ -1,10 +1,13 @@
-<?php require 'src/model.php'; ?>
+
+
+..
 
 
 <h1>The trail hiking</h1>
 <p>Nos dernières balades :</p>
 
 <?php
+$trails = getTrails();
 foreach ($trails as $trail) {
     ?>
     <div class="card_trails">
