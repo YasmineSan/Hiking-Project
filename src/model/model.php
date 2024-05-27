@@ -1,9 +1,9 @@
 <?php
 
-$dbname = "hiking_project";
-$host = "localhost";
-$user = "root";
-$password = '';
+//$dbname = "hamilton-9-crazy-bears";
+//$servername = "188.166.24.55";
+//$username = "crazy-bears";
+//$password = '6GapQriAiJJEioql';
 
 function getTrails() {
     // We connect to the database.

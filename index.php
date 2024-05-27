@@ -1,6 +1,12 @@
 <?php
-include 'src/model.php';
+include 'src/model/model.php';
+
 
 getTrails();
 
-include 'view/homepage.php';
+include 'src/view/homepage.php';
+
+require_once 'src/controller/AuthController.php';
+
+$authController = new AuthController();
+$authController->showSubscriptionForm();

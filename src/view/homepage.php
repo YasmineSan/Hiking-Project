@@ -1,8 +1,4 @@
 
-
-..
-
-
 <h1>The trail hiking</h1>
 <p>Nos dernières balades :</p>
 
