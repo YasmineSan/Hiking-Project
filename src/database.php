@@ -12,7 +12,7 @@ try {
     $database = new PDO("mysql:host=$dbname;dbname=$host;charset=utf8", $username, $password);
     // Configurer PDO pour lever des exceptions en cas d'erreur
     $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    echo "Connected successfully go to <a href=/Hiking-Project/src/view/logout.php>Log out</a>";
 } catch (PDOException $e) {
     die("Connection error: " . $e->getMessage());
 }
