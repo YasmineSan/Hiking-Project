@@ -16,14 +16,4 @@ if (isset($_GET['id'])) { // Utilisez GET au lieu de POST
         echo "Aucune randonnée trouvée avec l'id: $id";
     }
 }
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Détails de la randonnée</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-</head>
-<body>
-</body>
-</html>
+

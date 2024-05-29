@@ -19,11 +19,17 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["username"])) {
 
     <p>Hello <?= htmlspecialchars($_SESSION["username"]) ?></p>
 
-    <p><a href="logout.php">Log out</a></p>
+    <p><a href="/Hiking_project/src/view/logout.php">Log out</a></p>
+
+    <p><a href="/Hiking_project/src/view/add-hikes.php">Add a Hike</a></p>
+
+
+
+    <?php include 'homepage.php';  ?>
 
 <?php else: ?>
 
-    <p><a href="<?= __DIR__ . '/login.php'; ?>">Log in</a> or <a href="view.signit.php">sign up</a></p>
+    <p><a href="/Hiking_project/src/view/login.php">Log in</a> or <a href="/Hiking_project/src/view/view.signit.php">sign up</a></p>
 
 <?php endif; ?>
 
