@@ -32,26 +32,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>Login</h1>
 
 <?php if ($is_invalid): ?>
     <em>Invalid login</em>
 <?php endif; ?>
 
-<form method="post">
-    <label for="email">email</label>
-    <input type="email" name="email" id="email"
+<img class="bag" src="images/bag.png" height="100" width="87"/>
+    <h1>Login</h1>
+    <h5>Create your own hikes !</h5>
+    <div class="subscribe_form">
+        <form action="login.php" method="post">
+            <input class="form-item" type="email" name="email" id="email"
            value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
-
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-
-    <button>Log in</button>
-</form>
+            <input class="form-item" type="password" name="password" id="password">
+            <button class="form-item" type="submit">Subscribe</button>
+        </form>
+    </div>
 
 </body>
 </html>

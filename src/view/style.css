@@ -1,0 +1,905 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #000000;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo styles */
+.logo {
+    margin-bottom: 0;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile nav styles */
+.mobile-nav {
+    position: fixed;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(100%);
+    transition: transform 300ms ease-in-out;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav ul li {
+    width: 100%;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    width: 100%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #444;
+}
+
+/* Menu button styles */
+.menu-btn {
+    position: fixed;
+    top: 30px;
+    left: 85%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 5px 2px 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+.menu-btn__burger {
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-10px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(10px);
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Active nav styles */
+.mobile-nav.open {
+    transform: translateY(0);
+}
+
+figure {
+    border: 2px solid #c4b296;
+    margin: auto;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c4b296;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'Metal Mania', cursive;
+    font-size: 50px;
+    text-align: center;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    color: #c4b296;
+    text-shadow: black 5px 5px 2px;
+}
+
+h2 {
+    color: #FFF;
+    margin: 0 0 0 18px;
+}
+
+p, li {
+    color: #FFF;
+    font-size: 14px;
+    text-align: justify;
+    margin: 18px;
+}
+
+h3 {
+    color: #c4b296;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0 30px;
+    color: #c4b296;
+    font-weight: bold;
+    border-top: 2px solid #c4b296;
+    padding: 10px 0;
+}
+
+.site_desc {
+    display: flex;
+    flex-direction: column;
+    color: #c4b296;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+.site_desc .tags_container {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    text-align: center;
+    font-size: 19px;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    background-color: #272727;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #c4b296;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #c4b296;
+    margin: 30px 30px 0 30px;
+    position: relative;
+    color: #c4b296;
+    font-family: "Bebas Neue", cursive;
+    font-size: 40px;
+}
+
+.tags::before,
+.tags::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #c4b296;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -6px;
+}
+
+.tags::before {
+    left: -5px; /* Adjust as needed */
+}
+
+.tags::after {
+    right: -5px; /* Adjust as needed */
+}
+
+.icon {
+    padding: 0 5px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #c4b296;
+    font-weight: bold;
+}
+
+.tags_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.tags_legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tags_legend p {
+    color: #c4b296;
+}
+
+.site_desc .intro {
+    margin: 10px 0;
+}
+
+.site_desc .right {
+    align-self: flex-end;
+}
+
+.site_desc .left {
+    align-self: flex-start;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    margin: 10px;
+}
+
+article{
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+article .hikes{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+article .hike_container{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+button{
+    background-color: #c4b296;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 1020px) {
+
+    .mobile-nav, .menu-btn, .menu-btn__burger{
+        display: none;
+    }
+
+    body {
+        margin: 0 auto;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #000000;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .forest{
+        position: relative;
+        height: 836px;
+        width: 1600px;
+        z-index: 0;
+    }
+
+    .forest2, .forest3{
+        position: relative;
+        height: 558px;
+        width: 1382px;
+        z-index: 0;
+    }
+
+    .forest4{
+        position: relative;
+        height: 536px;
+        width: 1382px;
+        z-index: 0;
+    }
+
+    .forest::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large3.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.6;
+        z-index: -1;
+    }
+
+    .forest2::before {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large4.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .forest3::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large5.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .forest4::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large6.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .add-task {
+        background-image: url('images/tasks.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 445px;
+        width: 375px;
+        margin-top: 40px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 30px;
+        left: 6%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    h1 {
+        font-family: 'Metal Mania', cursive;
+        font-size: 150px;
+        text-align: center;
+        align-self: center;
+        padding: 0;
+        color: #c4b296;
+        text-shadow: black 6px 6px 2px;
+        position: relative;
+        z-index: 3;
+        margin: 80px 600px;
+        border-top: 3px solid #c4b296;
+        border-bottom: 3px solid #c4b296;
+    }
+
+    .desktop-nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0 0 6px 0;
+        margin: 0;
+        background-image: url('images/skulls.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .desktop-nav ul li {
+        margin-right: 50px;
+    }
+
+    .desktop-nav ul li a {
+        text-decoration: none;
+        color: #fffefe;
+        text-shadow: black 3px 2px 2px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .subscribe_desktop {
+        display: block;
+        margin: 50px auto;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgb(196, 178, 150);
+        padding: 15px 40px;
+        border-radius: 4px;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .subscribe_desktop:hover {
+        color: rgb(0, 0, 0);
+        box-shadow: 10px 15px 45px rgb(0, 0, 0);
+    }
+
+    .hike_details {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    .desktop-desc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #c4b296;
+    }
+
+    h3 {
+        color: #c4b296;
+        text-align: center;
+        text-shadow: black 3px 2px 2px;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    h4 {
+        color: #c4b296;
+        text-align: center;
+        text-shadow: black 15px 2px 20px;
+        font-size: 74px;
+        font-weight: bold;
+        margin: 150px 0 0 0;
+        padding: 0;
+    }
+
+    h5 {
+        color: #FFF;
+        text-align: center;
+        font-size: 19px;
+        padding: 0;
+        margin: 5px 0 10px 0;
+    }
+
+    h6 {
+        color: #FFF;
+        text-align: center;
+        font-size: 19px;
+        padding: 0;
+        margin: 5px 0 10px 0;
+    }
+
+    .dashboard{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+
+    section h3 {
+        display: none;
+    }
+
+    .trait {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c4b296;
+        text-shadow: black 3px 2px 2px;
+        font-family: "Bebas Neue", cursive;
+        font-size: 40px;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .trait::before,
+    .trait::after {
+        content: "";
+        flex: 1;
+        height: 2px; /* Adjust the thickness of the line */
+        background-color: #C4B296FF;
+        margin: 0 30px; /* Adjust the spacing around the line */
+    }
+
+    .site_desc {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 30px;
+        grid-template-rows: auto auto auto auto;
+        color: #c4b296;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 30px 0;
+        align-items: center;
+    }
+
+    .site_desc .tags_container {
+        grid-column: 1;
+        grid-row: 1;
+        color: #FFF;
+        text-align: center;
+        font-size: 19px;
+        padding: 0;
+        margin: 5px 0 10px 0;
+        background-color: #272727;
+        border-radius: 10px;
+        box-shadow: 0 0 3px #c4b296;
+    }
+
+    .tags {
+        display: flex;
+        justify-content: center;
+        border-bottom: 3px solid #c4b296;
+        margin: 30px 30px 0 30px;
+        position: relative;
+        color: #c4b296;
+        font-family: "Bebas Neue", cursive;
+        font-size: 40px;
+    }
+
+    .tags::before,
+    .tags::after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #c4b296;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -6px;
+    }
+
+    .tags::before {
+        left: -5px; /* Adjust as needed */
+    }
+
+    .tags::after {
+        right: -5px; /* Adjust as needed */
+    }
+
+    .tags_icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 30px;
+    }
+
+    .tags_legend {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .tags_legend p {
+        color: #c4b296;
+    }
+
+    .site_desc .intro {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .site_desc .why {
+        grid-row: 1;
+        grid-column: 3;
+    }
+
+    .site_desc .offer{
+        grid-row: 1/3;
+        grid-column: 2;
+    }
+
+    .subscribe {
+        background-image: url('images/subscribe_desktop.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1600px;
+        height: 765px;
+    }
+
+    .subscribe h1{
+        margin: 100px;
+    }
+
+    .bag{
+        display: none;
+    }
+
+    .subscribe_form {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px 0 0 0;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .subscribe_form button{
+        margin:15px auto 0 0 ;
+        justify-self: center;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .desktop-nav, .subscribe_desktop, .desktop-desc {
+        display: none;
+    }
+
+    .bag {
+        display: block;
+        margin-left: 148px;
+        margin-top: -60px;
+    }
+
+    .subscribe {
+        background-image: url('images/subscribe.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 375px;
+        height: 556px;
+    }
+
+    .subscribe_form {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: space-around;
+        align-items: center;
+        margin: 120px 0 0 0;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .form-item {
+        display: flex;
+        align-self: center;
+        margin: 10px auto;
+    }
+
+    .subscribe h5 {
+        color: #000;
+        text-align: center;
+        font-size: 19px;
+        padding: 0;
+        margin: 23px 0;
+    }
+
+    .hike_details {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        background-color: #c4b296;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h6 {
+        color: #FFF;
+        text-align: center;
+        font-size: 19px;
+        padding: 0;
+        margin: 5px 0 10px 0;
+    }
+
+    .forest::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forestok.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.6;
+        z-index: -1;
+    }
+
+    .forest2, .forest3{
+        position: relative;
+        height: 151px;
+        width: 375px;
+        z-index: 0;
+    }
+
+    .forest2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large4.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .forest3::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large5.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .forest4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/forest_large6.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.9;
+        z-index: -1;
+    }
+
+    .trait{
+        display: none;
+    }
+
+    h4 {
+        color: #c4b296;
+        text-align: center;
+        text-shadow: black 20px 20px 20px;
+        font-size: 29px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        -webkit-text-stroke: 1px black;
+    }
+
+    article{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .subscribe_form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 80px 0 0 0;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .form-item {
+        display: flex;
+        align-self: center;
+        margin: 10px auto;
+    }
+
+    .subscribe h1{
+        margin: 12px;
+    }
+
+    .subscribe h5{
+        color:#FFFFFF;
+    }
+
+    .forest {
+        height: 196px;
+        width: 375px;
+    }
+
+}
+

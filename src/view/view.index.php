@@ -10,28 +10,44 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["username"])) {
 <head>
     <title>Home</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <h1>Home</h1>
-<?php if (isset($_SESSION["username"])): ?>
 
-    <p>Hello <?= htmlspecialchars($_SESSION["username"]) ?></p>
+<nav class="mobile-nav">
+    <ul>
+        <li><a href="view.index.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="homepage.php">Our metal hikes</a></li>
+        <li><a href="/Hiking_project/src/view/view.signit.php">Sign it</a></li>
+        <?php if (isset($_SESSION["username"])): ?>
+        <p>Hello <?= htmlspecialchars($_SESSION["username"]) ?></p>
+        <p><a href="/Hiking_project/src/view/logout.php">Log out</a></p>
+        <p><a href="/Hiking_project/src/view/add-hikes.php">Add a Hike</a></p>
+        <?php else: ?>
 
-    <p><a href="/Hiking_project/src/view/logout.php">Log out</a></p>
+            <p><a href="/Hiking_project/src/view/login.php">Log in</a></p>
 
-    <p><a href="/Hiking_project/src/view/add-hikes.php">Add a Hike</a></p>
+        <?php endif; ?>
+    </ul>
+</nav>
+<div class="menu-btn" onclick="toggleMenu()">
+    <div class="menu-btn__burger"></div>
+</div>
+<script src="script.js"></script>
+<?php include 'homepage.php';  ?>
 
 
 
-    <?php include 'homepage.php';  ?>
 
-<?php else: ?>
 
-    <p><a href="/Hiking_project/src/view/login.php">Log in</a> or <a href="/Hiking_project/src/view/view.signit.php">sign up</a></p>
 
-<?php endif; ?>
+
+
+
+
 
 </body>
 </html>

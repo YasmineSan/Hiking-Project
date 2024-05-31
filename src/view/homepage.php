@@ -7,18 +7,29 @@
 $trails = getTrails();
 foreach ($trails as $trail) {
     ?>
-    <div class="card_trails">
-        <a href="trail-details.php?id=<?= htmlspecialchars($trail['id'])?>">
-            <h3>
-                <?= htmlspecialchars($trail['name']);?>
-            </h3>
-        </a>
-        <p><em>distance : <?= htmlspecialchars($trail['distance']);?></em> Km<br></p>
+
+
+    <article>
+        <div class="hikes">
+            <img class="hike_details" src="images/metallica1.webp" height="300" width="300">
+            <div class="flex-container">
+                <figure>1</figure>
+                <a href="trail-details.php?id=<?= htmlspecialchars($trail['id'])?>">
+                    <h3>
+                        <?= htmlspecialchars($trail['name']);?>
+                    </h3>
+                </a>
+            </div>
+            <div class="icons">
+                <span class="icon">&#x23F1; 05:09</span>
+                <span class="icon">&#x1F3D4;<p>distance : <?= htmlspecialchars($trail['distance']);?></p></span>
+                <span class="icon">&#x2197; 250 m</span>
+            </div>
             <p><?= nl2br(htmlspecialchars($trail['description'])); ?></p>
-            <br />
-        </p>
-    </div>
-    <a href="delete-hike.php?id=<?= htmlspecialchars($trail['id']) ?>">Delete</a>
+            <button>See details</button>
+            <a href="delete-hike.php?id=<?= htmlspecialchars($trail['id']) ?>">Delete</a>
+        </div>
+    </article>
     <?php
 }
 ?>
