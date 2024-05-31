@@ -10,13 +10,13 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["username"])) {
 <head>
     <title>Home</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
 <body>
 
 <h1>Home</h1>
 
-<nav class="mobile-nav">
+<nav class="desktop-nav">
     <ul>
         <li><a href="view.index.php">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -36,7 +36,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["username"])) {
 <div class="menu-btn" onclick="toggleMenu()">
     <div class="menu-btn__burger"></div>
 </div>
-<script src="script.js"></script>
 <?php include 'homepage.php';  ?>
 
 

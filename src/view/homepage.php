@@ -1,6 +1,5 @@
 <?php require __DIR__ . '/../model/model.php'; ?>
-<h1>The trail hiking</h1>
-<p>Nos dernières balades :</p>
+
 
 
 <?php
@@ -8,7 +7,7 @@ $trails = getTrails();
 foreach ($trails as $trail) {
     ?>
 
-
+<div class="hikes-box">
     <article>
         <div class="hikes">
             <img class="hike_details" src="images/metallica1.webp" height="300" width="300">
@@ -21,15 +20,16 @@ foreach ($trails as $trail) {
                 </a>
             </div>
             <div class="icons">
-                <span class="icon">&#x23F1; 05:09</span>
-                <span class="icon">&#x1F3D4;<p>distance : <?= htmlspecialchars($trail['distance']);?></p></span>
-                <span class="icon">&#x2197; 250 m</span>
+                <span class="icon">&#x23F1; <?= htmlspecialchars($trail['duration']);?>H</span>
+                <span class="icon">&#x1F3D4; <?= htmlspecialchars($trail['distance']);?>Km</span>
+                <span class="icon">&#x2197; <?= htmlspecialchars($trail['elevation_gain']);?> m</span>
             </div>
-            <p><?= nl2br(htmlspecialchars($trail['description'])); ?></p>
-            <button>See details</button>
-            <a href="delete-hike.php?id=<?= htmlspecialchars($trail['id']) ?>">Delete</a>
-        </div>
+                <p><?= nl2br(htmlspecialchars($trail['description'])); ?></p>
+                <button>See details</button> \n
+                <button><a href="delete-hike.php?id=<?= htmlspecialchars($trail['id']) ?>">Delete</a></button>
+            </div>
     </article>
+</div>
     <?php
 }
 ?>

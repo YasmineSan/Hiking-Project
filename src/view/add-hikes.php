@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <head>
         <title>Home</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../style.css">
     </head>
     <body>
         <form class="form-item"
